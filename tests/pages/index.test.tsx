@@ -7,7 +7,7 @@ describe('<Home />', () => {
   it('renders a heading', () => {
     const { container } = render(<Home />);
 
-    const home = screen.getByText(/home/i);
+    const home = screen.getByText('Home');
 
     expect(home).toBeInTheDocument();
     expect(container).toMatchSnapshot();
