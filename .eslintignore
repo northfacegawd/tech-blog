@@ -4,3 +4,5 @@ _next
 .next
 .github
 node_modules
+jest.config.js
+jest.setup.js
