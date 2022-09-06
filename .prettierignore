@@ -1,0 +1,9 @@
+.next
+.vscode
+next-env.d.ts
+README.md
+_next
+node_modules
+.husky
+.github
+Footer
