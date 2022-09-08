@@ -2,17 +2,19 @@
 name: Jest Test
 on:
   pull_request: #pull request 감지
-    branches:
-      - master # master 브랜치에 한에서
+    branches: [master] # master 브랜치에 한에서
 
 jobs:
-  Run Jest:
-    runs-on: [ubuntu-latest] # 우분투 가상환경 적용
+  run-jest:
+    runs-on: ubuntu-latest # 우분투 가상환경 적용
     strategy:
       matrix: 
-        node-version: [16.x]
+      - node-version: [16.x]
     steps: 
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
       - name: npm install
         run: npm install --legacy-peer-deps
       - name: npm run test code
@@ -35,4 +37,4 @@ jobs:
               pull_number,
               state: "closed"
             })
-      if: failure()
+        if: failure()
