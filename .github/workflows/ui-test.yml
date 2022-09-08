@@ -1,0 +1,37 @@
+# ui-test.yml
+name: Jest Test
+on:
+  pull_request: #pull request 감지
+    branches: [master] # master 브랜치에 한에서
+
+jobs:
+  run-jest:
+    runs-on: ubuntu-latest # 우분투 가상환경 적용
+    steps: 
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: npm install
+        run: npm install --legacy-peer-deps
+      - name: npm run test code
+        run: npm run test:ci
+      - name: test fail
+        uses: actions/github-script@0.2.0 # github-script 액션 사용
+        with: 
+          github-token: ${{github.token}} # github token 선언
+          script: |                       # script에 원하는 스크립트를 작성
+            const ref = "${{github.ref}}"
+            const pull_number = Number(ref.split("/")[2])
+            await github.pulls.createReview({
+              ...context.repo,
+              pull_number,
+              body:"테스트에 실패했습니다. 테스트 코드를 다시 확인해주세요. ",
+              event: "REQUEST_CHANGES"
+            })
+            await github.pulls.update({
+              ...context.repo,
+              pull_number,
+              state: "closed"
+            })
+        if: failure()
