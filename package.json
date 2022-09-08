@@ -9,6 +9,10 @@
     "lint": "next lint",
     "test": "jest --watch --passWithNoTests",
     "test:ci": "jest --ci --passWithNoTests",
+    "check-types": "tsc --pretty --noEmit",
+    "check-format": "prettier --check .",
+    "check-lint": "eslint . --ext ts --ext tsx --ext js",
+    "format": "prettier --write .",
     "prepare": "husky install"
   },
   "dependencies": {
