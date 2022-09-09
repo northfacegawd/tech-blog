@@ -2,6 +2,7 @@ const primary = '#0AC5A8';
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ['class', '.dark-mode'],
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
