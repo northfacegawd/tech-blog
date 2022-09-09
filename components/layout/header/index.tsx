@@ -4,6 +4,7 @@ import SunIcon from '@components/icons/sun';
 import { classnames } from '@lib/utils';
 import Link from 'next/link';
 import React, { useState } from 'react';
+import HeaderButton from './header-button';
 
 export default function Header() {
   const [dark, setDark] = useState<boolean>(false);
@@ -22,24 +23,12 @@ export default function Header() {
           </a>
         </Link>
         <div className="flex">
-          <button
-            className={classnames(
-              'flex items-center justify-center hover:bg-primary hover:bg-opacity-20 rounded-full w-10 h-10 transition-colors hover:ease-out duration-300',
-              //   dark ? 'text-white' : 'text-black',
-            )}
-            type="button"
-            onClick={onToggleDark}
-          >
+          <HeaderButton onClick={onToggleDark}>
             {dark ? <SunIcon /> : <MoonIcon />}
-          </button>
-          <button
-            className={classnames(
-              'flex items-center justify-center w-10 h-10 hover:bg-primary hover:bg-opacity-20 rounded-full transition-colors hover:ease-out duration-300',
-            )}
-            type="button"
-          >
+          </HeaderButton>
+          <HeaderButton>
             <MenuIcon />
-          </button>
+          </HeaderButton>
         </div>
       </nav>
     </header>
