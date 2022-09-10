@@ -37,9 +37,11 @@ export default function Header() {
           </a>
         </Link>
         <div className="flex">
-          <HeaderLink href="/manifesto">Manifesto</HeaderLink>
-          <HeaderLink href="/posts">Posts</HeaderLink>
-          <HeaderLink href="/resume">Resume</HeaderLink>
+          <div className="md:flex hidden">
+            <HeaderLink href="/manifesto">Manifesto</HeaderLink>
+            <HeaderLink href="/posts">Posts</HeaderLink>
+            <HeaderLink href="/resume">Resume</HeaderLink>
+          </div>
           <HeaderButton onClick={onToggleDark} role="button">
             {dark ? <SunIcon /> : <MoonIcon />}
           </HeaderButton>
@@ -57,7 +59,7 @@ export default function Header() {
         {(state) => (
           <nav
             className={classnames(
-              'w-full px-4 mx-auto max-w-6xl ease-out duration-300 transition-all opacity-0 pb-4',
+              'md:hidden w-full px-4 mx-auto max-w-6xl ease-out duration-300 transition-all opacity-0 pb-4',
             )}
             data-testid="mobile-navigator"
             style={{ ...transitionStyles[state] }}
