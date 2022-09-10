@@ -6,6 +6,7 @@ import MoonIcon from '@components/icons/moon';
 import SunIcon from '@components/icons/sun';
 import { classnames } from '@lib/utils';
 import HeaderButton from './header-button';
+import HeaderLink from './header-link';
 
 const transitionStyles: Partial<Record<TransitionStatus, { opacity: number }>> =
   {
@@ -36,6 +37,9 @@ export default function Header() {
           </a>
         </Link>
         <div className="flex">
+          <HeaderLink href="/manifesto">Manifesto</HeaderLink>
+          <HeaderLink href="/posts">Posts</HeaderLink>
+          <HeaderLink href="/resume">Resume</HeaderLink>
           <HeaderButton onClick={onToggleDark} role="button">
             {dark ? <SunIcon /> : <MoonIcon />}
           </HeaderButton>
@@ -43,6 +47,7 @@ export default function Header() {
             onClick={onToggleOpen}
             role="button"
             aria-label="menu-open-button"
+            className="md:hidden"
           >
             <MenuIcon />
           </HeaderButton>
@@ -57,21 +62,9 @@ export default function Header() {
             data-testid="mobile-navigator"
             style={{ ...transitionStyles[state] }}
           >
-            <Link href="/manifesto">
-              <a className="block p-2 cursor-pointer rounded-md hover:backdrop-brightness-95">
-                Manifesto
-              </a>
-            </Link>
-            <Link href="/posts">
-              <a className="block p-2 cursor-pointer rounded-md hover:backdrop-brightness-95">
-                Posts
-              </a>
-            </Link>
-            <Link href="/resume">
-              <a className="block p-2 cursor-pointer rounded-md hover:backdrop-brightness-95">
-                Resume
-              </a>
-            </Link>
+            <HeaderLink href="/manifesto">Manifesto</HeaderLink>
+            <HeaderLink href="/posts">Posts</HeaderLink>
+            <HeaderLink href="/resume">Resume</HeaderLink>
           </nav>
         )}
       </Transition>

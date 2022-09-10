@@ -6,11 +6,13 @@ interface HeaderButtonProps
 
 const HeaderButton: React.FC<PropsWithChildren<HeaderButtonProps>> = function ({
   children,
+  className,
   ...rest
 }) {
   return (
     <button
       className={classnames(
+        className ?? '',
         'flex items-center justify-center hover:bg-primary hover:bg-opacity-20 rounded-full w-10 h-10 transition-colors hover:ease-out duration-300',
       )}
       type="button"
