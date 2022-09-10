@@ -12,7 +12,7 @@ export default function Header() {
   const onToggleDark = () => setDark((prev) => !prev);
 
   return (
-    <header className="px-4 h-14 flex items-center w-full max-w-7xl mx-auto">
+    <header className="px-4 h-14 flex items-center w-full max-w-6xl mx-auto">
       <nav className="flex items-center justify-between w-full">
         <Link href="/">
           <a

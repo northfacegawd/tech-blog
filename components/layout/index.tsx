@@ -5,7 +5,7 @@ const Layout: React.FC<PropsWithChildren> = function ({ children }) {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main className="max-w-6xl mx-auto px-4">{children}</main>
       <footer />
     </>
   );
