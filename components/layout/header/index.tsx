@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Transition, TransitionStatus } from 'react-transition-group';
 import Link from 'next/link';
 import MenuIcon from '@components/icons/menu';
 import MoonIcon from '@components/icons/moon';
 import SunIcon from '@components/icons/sun';
-import { classnames } from '@lib/utils';
+import { classnames, isClient } from '@lib/utils';
 import HeaderButton from './header-button';
 import HeaderLink from './header-link';
 
@@ -22,6 +22,31 @@ export default function Header() {
 
   const onToggleDark = () => setDark((prev) => !prev);
   const onToggleOpen = () => setOpen((prev) => !prev);
+
+  useEffect(() => {
+    if (!isClient) {
+      return;
+    }
+    const { theme } = document.body.dataset;
+    if (theme === 'dark') {
+      setDark(true);
+    }
+    if (theme === 'light') {
+      setDark(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) {
+      return;
+    }
+    const { body } = document;
+    if (dark) {
+      body.classList.add('dark-mode');
+    } else {
+      body.classList.remove('dark-mode');
+    }
+  }, [dark]);
 
   return (
     <header className="w-full fixed top-0 left-0 border-b border-gray-200 bg-white backdrop-blur bg-opacity-40 transition-all ease-out duration-300">

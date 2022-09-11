@@ -7,6 +7,7 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document';
+import Script from 'next/script';
 
 class MyDocument extends Document {
   static async getInitialProps(
@@ -31,6 +32,20 @@ class MyDocument extends Document {
           rel="stylesheet"
         />
         <body>
+          <Script
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+            (function () {
+              if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.body.dataset.theme = 'dark';
+              } else {
+                document.body.dataset.theme = 'light';
+              }
+            })();
+          `,
+            }}
+          />
           <Main />
           <NextScript />
         </body>
