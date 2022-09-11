@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '@components/layout/header';
 import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 describe('<Header />', () => {
   it('logo render', () => {
@@ -11,13 +12,13 @@ describe('<Header />', () => {
     expect(logo).toBeInTheDocument();
   });
 
-  it('menu button click', () => {
+  it('menu button click', async () => {
     render(<Header />);
 
     const button = screen.getByRole('button', { name: 'menu-open-button' });
-    fireEvent.click(button);
+    userEvent.click(button);
 
-    const navigation = screen.getByTestId('mobile-navigator');
+    const navigation = await screen.findByTestId('mobile-navigator');
 
     expect(navigation).toBeInTheDocument();
   });
