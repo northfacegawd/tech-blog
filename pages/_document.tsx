@@ -31,16 +31,16 @@ class MyDocument extends Document {
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&display=swap"
           rel="stylesheet"
         />
-        <body>
+        <body className="bg-white text-black dark:bg-gray-900 dark:text-white transition-colors ease-out duration-300">
           <Script
             strategy="afterInteractive"
             dangerouslySetInnerHTML={{
               __html: `
             (function () {
               if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.body.dataset.theme = 'dark';
+                document.querySelector('html').dataset.theme = 'dark';
               } else {
-                document.body.dataset.theme = 'light';
+                document.querySelector('html').dataset.theme = 'light';
               }
             })();
           `,

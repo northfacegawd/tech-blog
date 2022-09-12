@@ -27,7 +27,7 @@ export default function Header() {
     if (!isClient) {
       return;
     }
-    const { theme } = document.body.dataset;
+    const { theme } = document.querySelector('html')!.dataset;
     if (theme === 'dark') {
       setDark(true);
     }
@@ -40,16 +40,16 @@ export default function Header() {
     if (!isClient) {
       return;
     }
-    const { body } = document;
+    const html = document.querySelector('html')!;
     if (dark) {
-      body.classList.add('dark-mode');
+      html.classList.add('dark-mode');
     } else {
-      body.classList.remove('dark-mode');
+      html.classList.remove('dark-mode');
     }
   }, [dark]);
 
   return (
-    <header className="w-full fixed top-0 left-0 border-b border-gray-200 bg-white backdrop-blur bg-opacity-40 transition-all ease-out duration-300">
+    <header className="dark:bg-gray-900 dark:border-black dark:text-white w-full fixed top-0 left-0 border-b border-gray-200 bg-white backdrop-blur bg-opacity-40 transition-all ease-out duration-300">
       <nav className="flex items-center justify-between w-full px-4 h-14 mx-auto max-w-6xl">
         <Link href="/">
           <a
