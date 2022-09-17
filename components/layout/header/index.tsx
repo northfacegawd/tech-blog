@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Transition, TransitionStatus } from 'react-transition-group';
 import Link from 'next/link';
 import MenuIcon from '@components/icons/menu';
 import MoonIcon from '@components/icons/moon';
 import SunIcon from '@components/icons/sun';
-import { classnames } from '@lib/utils';
+import { classnames, isClient } from '@lib/utils';
 import HeaderButton from './header-button';
 import HeaderLink from './header-link';
 
@@ -23,8 +23,33 @@ export default function Header() {
   const onToggleDark = () => setDark((prev) => !prev);
   const onToggleOpen = () => setOpen((prev) => !prev);
 
+  useEffect(() => {
+    if (!isClient) {
+      return;
+    }
+    const { theme } = document.querySelector('html')!.dataset;
+    if (theme === 'dark') {
+      setDark(true);
+    }
+    if (theme === 'light') {
+      setDark(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) {
+      return;
+    }
+    const html = document.querySelector('html')!;
+    if (dark) {
+      html.classList.add('dark-mode');
+    } else {
+      html.classList.remove('dark-mode');
+    }
+  }, [dark]);
+
   return (
-    <header className="w-full fixed top-0 left-0 border-b border-gray-200 bg-white backdrop-blur bg-opacity-40 transition-all ease-out duration-300">
+    <header className="dark:bg-gray-900 dark:border-black dark:text-white w-full fixed top-0 left-0 border-b border-gray-200 bg-white backdrop-blur bg-opacity-40 transition-all ease-out duration-300">
       <nav className="flex items-center justify-between w-full px-4 h-14 mx-auto max-w-6xl">
         <Link href="/">
           <a
