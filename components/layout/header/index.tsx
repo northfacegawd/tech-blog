@@ -49,52 +49,54 @@ export default function Header() {
   }, [dark]);
 
   return (
-    <header className="dark:bg-gray-900 dark:border-black dark:text-white w-full fixed top-0 left-0 border-b border-gray-200 bg-white backdrop-blur bg-opacity-40 transition-all ease-out duration-300">
-      <nav className="flex items-center justify-between w-full px-4 h-14 mx-auto max-w-6xl">
-        <Link href="/">
-          <a
-            className="text-primary font-extrabold text-3xl"
-            style={{
-              fontFamily: 'Roboto',
-            }}
-          >
-            ZUN
-          </a>
-        </Link>
-        <div className="flex">
-          <div className="md:flex hidden">
-            <HeaderLink href="/manifesto">Manifesto</HeaderLink>
-            <HeaderLink href="/posts">Posts</HeaderLink>
-            <HeaderLink href="/resume">Resume</HeaderLink>
+    <header className="w-full">
+      <div className="dark:bg-gray-900 dark:border-black dark:text-white border-b border-gray-200 bg-white backdrop-blur bg-opacity-10 transition-all ease-out duration-300 fixed top-0 left-0 w-full">
+        <nav className="flex items-center justify-between mx-auto max-w-6xl  px-4 h-14">
+          <Link href="/">
+            <a
+              className="text-primary font-extrabold text-3xl"
+              style={{
+                fontFamily: 'Roboto',
+              }}
+            >
+              ZUN
+            </a>
+          </Link>
+          <div className="flex">
+            <div className="md:flex hidden">
+              <HeaderLink href="/manifesto">Manifesto</HeaderLink>
+              <HeaderLink href="/posts">Posts</HeaderLink>
+              <HeaderLink href="/resume">Resume</HeaderLink>
+            </div>
+            <HeaderButton onClick={onToggleDark} role="button">
+              {dark ? <SunIcon /> : <MoonIcon />}
+            </HeaderButton>
+            <HeaderButton
+              onClick={onToggleOpen}
+              role="button"
+              aria-label="menu-open-button"
+              className="md:hidden"
+            >
+              <MenuIcon />
+            </HeaderButton>
           </div>
-          <HeaderButton onClick={onToggleDark} role="button">
-            {dark ? <SunIcon /> : <MoonIcon />}
-          </HeaderButton>
-          <HeaderButton
-            onClick={onToggleOpen}
-            role="button"
-            aria-label="menu-open-button"
-            className="md:hidden"
-          >
-            <MenuIcon />
-          </HeaderButton>
-        </div>
-      </nav>
-      <Transition in={open} timeout={{ enter: 300, exit: 50 }} unmountOnExit>
-        {(state) => (
-          <nav
-            className={classnames(
-              'md:hidden w-full px-4 mx-auto max-w-6xl ease-out duration-300 transition-all opacity-0 pb-4',
-            )}
-            data-testid="mobile-navigator"
-            style={{ ...transitionStyles[state] }}
-          >
-            <HeaderLink href="/manifesto">Manifesto</HeaderLink>
-            <HeaderLink href="/posts">Posts</HeaderLink>
-            <HeaderLink href="/resume">Resume</HeaderLink>
-          </nav>
-        )}
-      </Transition>
+        </nav>
+        <Transition in={open} timeout={{ enter: 300, exit: 50 }} unmountOnExit>
+          {(state) => (
+            <nav
+              className={classnames(
+                'md:hidden w-full px-4 mx-auto max-w-6xl ease-out duration-300 transition-all opacity-0 pb-4',
+              )}
+              data-testid="mobile-navigator"
+              style={{ ...transitionStyles[state] }}
+            >
+              <HeaderLink href="/manifesto">Manifesto</HeaderLink>
+              <HeaderLink href="/posts">Posts</HeaderLink>
+              <HeaderLink href="/resume">Resume</HeaderLink>
+            </nav>
+          )}
+        </Transition>
+      </div>
     </header>
   );
 }
