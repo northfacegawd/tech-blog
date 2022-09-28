@@ -51,7 +51,7 @@ export default function Header() {
   return (
     <header className="w-full">
       <div className="dark:bg-gray-900 dark:border-black dark:text-white border-b border-gray-200 bg-white backdrop-blur bg-opacity-10 transition-all ease-out duration-300 fixed top-0 left-0 w-full">
-        <nav className="flex items-center justify-between mx-auto max-w-6xl  px-4 h-14">
+        <nav className="flex items-center justify-between mx-auto max-w-4xl px-4 h-14">
           <Link href="/">
             <a
               className="text-primary font-extrabold text-3xl"
