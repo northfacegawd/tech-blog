@@ -12,6 +12,9 @@
   .blockquote {
     @apply bg-gray-500 p-12 rounded-lg border-l-8 border-gray-400;
   }
+  .card {
+    @apply shadow-xl p-10 bg-gray-300 bg-opacity-70 rounded-md transition-all hover:bg-opacity-100 hover:shadow-lg duration-300 ease-out;
+  }
 }
 
 html,
