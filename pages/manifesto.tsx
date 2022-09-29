@@ -5,7 +5,7 @@ const Manifesto: NextPage = function () {
   return (
     <div className="pt-14 w-full">
       <section className="w-full bg-slate-200 dark:bg-gray-800">
-        <div className="max-w-3xl mx-auto px-4 py-8">
+        <div className="max-w-2xl mx-auto px-4 py-8">
           <span className="text-lg text-slate-600 dark:text-zinc-400">
             제작 동기
           </span>
