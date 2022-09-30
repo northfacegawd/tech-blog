@@ -3,7 +3,7 @@ import React from 'react';
 export default function () {
   return (
     <section className="section active">
-      <div className="max-w-2xl mx-auto px-4 py-8">
+      <div className="max-layout px-4 py-8">
         <span className="text-lg text-slate-600 dark:text-zinc-400">
           제작 동기
         </span>

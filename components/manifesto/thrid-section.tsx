@@ -3,7 +3,7 @@ import React from 'react';
 export default function ThirdSection() {
   return (
     <section className="section active px-4 py-8">
-      <div className="max-w-2xl mx-auto">
+      <div className="max-layout">
         <span className="text-lg text-slate-600 dark:text-zinc-400">
           매니페스토
         </span>
