@@ -24,9 +24,6 @@ export default function Header() {
   const onToggleOpen = () => setOpen((prev) => !prev);
 
   useEffect(() => {
-    if (!isClient) {
-      return;
-    }
     const { theme } = document.querySelector('html')!.dataset;
     if (theme === 'dark') {
       setDark(true);
@@ -37,9 +34,6 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    if (!isClient) {
-      return;
-    }
     const html = document.querySelector('html')!;
     if (dark) {
       html.classList.add('dark-mode');
