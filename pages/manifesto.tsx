@@ -3,6 +3,7 @@ import { NextPage } from 'next';
 import FirstSection from '@components/manifesto/first-section';
 import SecondSection from '@components/manifesto/second-section';
 import ThirdSection from '@components/manifesto/thrid-section';
+import ForthSection from '@components/manifesto/forth-section';
 
 const Manifesto: NextPage = function () {
   return (
@@ -10,6 +11,7 @@ const Manifesto: NextPage = function () {
       <FirstSection />
       <SecondSection />
       <ThirdSection />
+      <ForthSection />
     </div>
   );
 };
