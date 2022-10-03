@@ -31,9 +31,7 @@ export default function ThirdSection() {
   const onChangeVisible = useCallback(() => {
     const section = sectionRef.current;
     if (!section) return;
-    // 초기 렌더링시에만 작동하도록
-    if (!isVisible(section.getBoundingClientRect()) && visible) return;
-    setVisible(true);
+    setVisible(isVisible(section.getBoundingClientRect()));
   }, [sectionRef.current]);
 
   useEffect(() => {
@@ -44,16 +42,16 @@ export default function ThirdSection() {
   }, [onChangeVisible]);
 
   return (
-    <Transition in={visible} timeout={duration}>
-      {(state) => (
-        <section className="section active px-4 py-8">
-          <div className="max-layout">
-            <span className="text-lg text-slate-600 dark:text-zinc-400">
-              매니페스토
-            </span>
-            <h1 className="text-4xl mt-2">나의 기술 글쓰기 4원칙</h1>
-            <div className="w-8 mx-auto my-6 h-[2px] bg-slate-400" />
-          </div>
+    <section className="section active px-4 py-8">
+      <div className="max-layout">
+        <span className="text-lg text-slate-600 dark:text-zinc-400">
+          매니페스토
+        </span>
+        <h1 className="text-4xl mt-2">나의 기술 글쓰기 4원칙</h1>
+        <div className="w-8 mx-auto my-6 h-[2px] bg-slate-400" />
+      </div>
+      <Transition in={visible} timeout={{ enter: duration, exit: 0 }}>
+        {(state) => (
           <div
             className="mx-auto flex max-w-4xl flex-wrap"
             ref={sectionRef}
@@ -117,8 +115,8 @@ export default function ThirdSection() {
               </p>
             </div>
           </div>
-        </section>
-      )}
-    </Transition>
+        )}
+      </Transition>
+    </section>
   );
 }
