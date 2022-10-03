@@ -1,7 +1,7 @@
 import { calcRange, isClient, isVisible } from '@lib/utils';
 import React, { useCallback, useEffect, useRef } from 'react';
 
-export default function ForthSection() {
+export default function SixthSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
 
@@ -38,7 +38,7 @@ export default function ForthSection() {
       <div className="mx-auto flex max-w-4xl flex-col md:flex-row">
         <div className="flex-1 overflow-hidden md:h-[40rem] mx-auto md:my-auto md:p-6 rounded-lg">
           <img
-            src="/images/mic.webp"
+            src="/images/focus.webp"
             alt="mic"
             className="object-cover rounded-lg will-change-transform"
             ref={imageRef}
@@ -46,30 +46,28 @@ export default function ForthSection() {
         </div>
         <div className="flex-1 md:p-10 mt-6 md:mt-0">
           <span className="text-lg text-slate-600 dark:text-zinc-400">
-            글이 읽기 쉽다는 것은
+            글이 재미있다는 것은
           </span>
-          <h1 className="text-4xl mt-2">그 자체가 하나의 발표 대본이라는 것</h1>
+          <h1 className="text-4xl mt-2">
+            일회성으로 소비되기보다는 오래 기억에 남을 수 있도록
+          </h1>
           <div className="divide" />
           <p className="indent-4 my-8">
-            읽기 쉬운 글은 서론과 본론, 결론의 구조가 명확합니다. 글의 주제와
-            대상 독자, 요약, 기대할 수 있는 바 등은 초반부에 언급하여 독자가
-            글의 정보를 한 눈에 파악할 수 있게 돕습니다.
+            일회성으로 정보를 얻고 잊혀지는 글이 아닌, 오랫동안 꾸준하게
+            사랑받는 글이 되기 위해서는 한 번 읽는 것만으로도 독자에게 깊은
+            인상을 남길 수 있어야 합니다.
           </p>
           <p className="indent-4 my-8">
-            또한 전체적인 글의 흐름이 물 흐르듯 자연스럽게 이어집니다. 이를
-            위해서는 연속되는 문단이나 문장 간의 분위기 전환이 매끄럽도록 특히
-            신경을 써야 합니다. 인과, 반전, 강조, 병렬, 예시 등의 관계에 맞추어
-            적절한 문장 구조를 잡습니다.
+            깊은 인상을 남기기 위한 가장 간단한 방법이 바로 재미라고 생각합니다.
+            이는 비유와 묘사, 유머를 글 속의 정보와 적절히 섞어 작성하는 것으로
+            얻을 수 있습니다. 시시콜콜한 농담에서부터 아예 작정하고 독특한
+            콘셉트를 맞춘 글을 쓰는 이유가 바로 그러합니다.
           </p>
           <p className="indent-4 my-8">
-            문장 구조에도 디테일한 부분도 놓치지 않아야 합니다. 문장이 너무
-            길지는 않은지, 한 호흡에 읽을 수 있는지, 맞춤법을 잘 지켰는지,
-            용어가 혼용되어 일관성을 해치지 않는지 등을 파악합니다.
-          </p>
-          <p className="indent-4 my-8">
-            그래서 저는 글을 쓸 때 마치 발표 대본을 준비한다고 생각하며 글을
-            씁니다. 즉, 읽기 쉬운 글은 그 자체를 소리 내어 읽는 것만으로도
-            완성된 발표를 할 수 있을 정도의 수준이어야 합니다.
+            재미는 독자의 몰입과 이해를 돕고, 글의 분위기를 유쾌하게 유지시키는
+            요소입니다. 이러한 경험은 독자에게 긍정적인 인식으로 각인되기
+            때문에, 혹여나 독자가 특정 키워드를 듣기만 해도 내가 작성한 글이
+            바로 떠오르게 만들 수도 있습니다.
           </p>
         </div>
       </div>
