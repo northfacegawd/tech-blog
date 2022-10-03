@@ -48,7 +48,7 @@ export default function SeventhSection() {
   return (
     <section className="w-full relative" ref={sectionRef}>
       <div className="bg-gradient-to-t from-black dark:to-gray-900 to-white h-[120vh] w-full" />
-      <div className="w-full overflow-x-hidden">
+      <div className="w-full overflow-x-hidden overflow-y-hidden">
         <img
           src="/images/earth.avif"
           alt="earth"
