@@ -13,7 +13,7 @@ const duration = 1000;
 const defaultStyle: CSSProperties = {
   transition: `${duration}ms ease-out`,
   transitionProperty: 'opacity, transform',
-  transform: 'translate3d(0,10%,0)',
+  transform: 'translate3d(0,20%,0)',
   opacity: 0,
 };
 
@@ -31,7 +31,8 @@ export default function ThirdSection() {
   const onChangeVisible = useCallback(() => {
     const section = sectionRef.current;
     if (!section) return;
-    if (!isVisible(section.getBoundingClientRect())) return;
+    // 초기 렌더링시에만 작동하도록
+    if (!isVisible(section.getBoundingClientRect()) && visible) return;
     setVisible(true);
   }, [sectionRef.current]);
 
