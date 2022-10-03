@@ -57,7 +57,7 @@ export default function SeventhSection() {
         />
       </div>
       <p
-        className="fixed top-[55vh] md:top-[50vh] left-[10vw] w-full z-20 text-2xl md:text-5xl hidden opacity-0 max-w-[80vw]"
+        className="transition-colors duration-300 fixed top-[55vh] md:top-[50vh] left-[10vw] w-full z-20 text-2xl md:text-5xl hidden opacity-0 max-w-[80vw] text-white"
         ref={pRef}
       >
         포스트를 넘어 콘텐츠로,
