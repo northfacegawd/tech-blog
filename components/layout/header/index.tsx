@@ -24,9 +24,6 @@ export default function Header() {
   const onToggleOpen = () => setOpen((prev) => !prev);
 
   useEffect(() => {
-    if (!isClient) {
-      return;
-    }
     const { theme } = document.querySelector('html')!.dataset;
     if (theme === 'dark') {
       setDark(true);
@@ -37,9 +34,6 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    if (!isClient) {
-      return;
-    }
     const html = document.querySelector('html')!;
     if (dark) {
       html.classList.add('dark-mode');
@@ -50,8 +44,8 @@ export default function Header() {
 
   return (
     <header className="w-full">
-      <div className="dark:bg-gray-900 dark:border-black dark:text-white border-b border-gray-200 bg-white backdrop-blur bg-opacity-10 transition-all ease-out duration-300 fixed top-0 left-0 w-full">
-        <nav className="flex items-center justify-between mx-auto max-w-6xl  px-4 h-14">
+      <div className="dark:bg-gray-900 dark:border-black dark:text-white border-b border-gray-200 bg-white backdrop-blur bg-opacity-10 transition-all ease-out duration-300 fixed top-0 left-0 w-full dark:bg-opacity-50 shadow-md dark:shadow-gray-800 z-50">
+        <nav className="flex items-center justify-between max-layout px-4 h-14">
           <Link href="/">
             <a
               className="text-primary font-extrabold text-3xl"
