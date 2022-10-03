@@ -33,18 +33,7 @@ export default function SeventhSection() {
 
   return (
     <section className="w-full relative" ref={sectionRef}>
-      <div
-        style={{
-          background: `linear-gradient(
-        180deg,
-        white 0%,
-        rgba(0, 0, 0, 1) 80%,
-        rgba(0, 0, 0, 1) 100%
-      )`,
-          height: '120vw',
-          width: '100%',
-        }}
-      />
+      <div className="bg-gradient-to-t from-black dark:to-gray-900 to-white h-[120vh] w-full" />
       <div className="w-full">
         <img src="/images/earth.avif" alt="earth" />
       </div>
