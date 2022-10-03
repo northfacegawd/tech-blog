@@ -5,7 +5,7 @@ const Layout: React.FC<PropsWithChildren> = function ({ children }) {
   return (
     <>
       <Header />
-      <main className="w-full overflow-x-hidden">{children}</main>
+      <main className="w-full">{children}</main>
       <footer />
     </>
   );

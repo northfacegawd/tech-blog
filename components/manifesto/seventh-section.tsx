@@ -16,14 +16,20 @@ export default function SeventhSection() {
     } else {
       p.style.display = 'none';
     }
+    const { scrollHeight } = section;
     const currentYOffset =
       (window.innerHeight || document.documentElement.clientHeight) -
       section.getBoundingClientRect().top;
     p.style.opacity = `${calcRange([0, 1], {
       currentYOffset,
-      scrollHeight: section.scrollHeight,
+      scrollHeight,
       delay: { start: 0.6, end: 0.85 },
     })}`;
+    image.style.transform = `translate3d(${calcRange([0, -5], {
+      currentYOffset,
+      scrollHeight,
+      delay: { start: 0.6, end: 1 },
+    })}%,0,0)`;
   }, [sectionRef.current, pRef.current, imageRef.current]);
 
   useEffect(() => {
@@ -33,14 +39,20 @@ export default function SeventhSection() {
     };
   }, []);
 
+  useEffect(() => {
+    const image = imageRef.current;
+    if (!image) return;
+    image.style.scale = '1.2';
+  }, [imageRef.current]);
+
   return (
     <section className="w-full relative" ref={sectionRef}>
       <div className="bg-gradient-to-t from-black dark:to-gray-900 to-white h-[120vh] w-full" />
-      <div className="w-full">
+      <div className="w-full overflow-x-hidden">
         <img
           src="/images/earth.avif"
           alt="earth"
-          className="scale-125"
+          className="object-cover"
           ref={imageRef}
         />
       </div>
