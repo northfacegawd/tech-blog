@@ -14,4 +14,21 @@ export function isVisible(rect: DOMRect) {
   return (top > 0 || bottom > 0) && top < vHeight;
 }
 
+interface CalcRangeOption {
+  currentYOffset: number;
+  scrollHeight: number;
+}
+
+export function calcRange(
+  range: [number, number],
+  { currentYOffset, scrollHeight }: CalcRangeOption,
+) {
+  try {
+    const scrollRatio = currentYOffset / scrollHeight;
+    return scrollRatio * (range[1] - range[0]) + range[0];
+  } catch {
+    return 0;
+  }
+}
+
 export default null;

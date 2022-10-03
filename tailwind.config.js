@@ -15,6 +15,9 @@ module.exports = {
       transitionTimingFunction: {
         'button-click': 'cubic-bezier(0.4, 0, 0.2, 1)',
       },
+      scale: {
+        150: '1.5',
+      },
     },
   },
   plugins: [],

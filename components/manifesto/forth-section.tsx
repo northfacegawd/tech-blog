@@ -1,15 +1,36 @@
-import { isVisible } from '@lib/utils';
-import React, { useEffect, useRef } from 'react';
-import mic from '@public/images/mic.jpeg';
+import { calcRange, isClient, isVisible } from '@lib/utils';
+import React, { useCallback, useEffect, useRef } from 'react';
 
 export default function ForthSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
+
+  const setImageTranslateY = useCallback(() => {
+    const section = sectionRef.current;
+    const image = imageRef.current;
+    if (!section || !image) return;
+    const currentYOffset =
+      (window.innerHeight || document.documentElement.clientHeight) -
+      section!.getBoundingClientRect().top;
+    image.style.transform = `translateY(${calcRange([0, 40], {
+      currentYOffset,
+      scrollHeight: section.scrollHeight,
+    })}px)`;
+  }, [sectionRef.current, imageRef.current]);
 
   useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-    window.addEventListener('scroll', () => {}, { passive: true });
-  }, [sectionRef.current]);
+    if (!imageRef.current) return;
+    imageRef.current.style.scale = '1.5';
+  }, [imageRef.current]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', setImageTranslateY, {
+      passive: true,
+    });
+    return () => {
+      window.removeEventListener('scroll', setImageTranslateY);
+    };
+  }, [setImageTranslateY]);
 
   return (
     <section className="section px-4 py-8" ref={sectionRef}>
@@ -18,7 +39,8 @@ export default function ForthSection() {
           <img
             src="/images/mic.jpeg"
             alt="mic"
-            className="h-full w-auto object-cover scale-125"
+            className="h-full w-auto object-cover rounded-lg"
+            ref={imageRef}
           />
         </div>
         <div className="flex-1 md:p-10 mt-6 md:mt-0">
