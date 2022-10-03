@@ -17,14 +17,40 @@ export function isVisible(rect: DOMRect) {
 interface CalcRangeOption {
   currentYOffset: number;
   scrollHeight: number;
+  delay?: {
+    start: number;
+    end: number;
+  };
 }
 
 export function calcRange(
   range: [number, number],
-  { currentYOffset, scrollHeight }: CalcRangeOption,
+  { currentYOffset, scrollHeight, delay }: CalcRangeOption,
 ) {
   try {
     const scrollRatio = currentYOffset / scrollHeight;
+    if (delay) {
+      const { start, end } = delay;
+      const partScrollStart = start * scrollHeight;
+      const partScrollEnd = end * scrollHeight;
+      const partScrollHeight = partScrollEnd - partScrollStart;
+      if (
+        currentYOffset >= partScrollStart &&
+        currentYOffset <= partScrollEnd
+      ) {
+        return (
+          ((currentYOffset - partScrollStart) / partScrollHeight) *
+            (range[1] - range[0]) +
+          range[0]
+        );
+      }
+      if (currentYOffset < partScrollStart) {
+        return range[0];
+      }
+      if (currentYOffset > partScrollEnd) {
+        return range[1];
+      }
+    }
     return scrollRatio * (range[1] - range[0]) + range[0];
   } catch {
     return 0;

@@ -10,7 +10,16 @@ module.exports = {
   theme: {
     extend: {
       colors: { primary },
-      backgroundColor: { primary, button: 'rgba(255, 255, 255, 0.08)' },
+      backgroundColor: {
+        primary,
+        button: 'rgba(255, 255, 255, 0.08)',
+        'manifesto-gradient': `linear-gradient(
+        180deg,
+        white 0%,
+        rgba(0, 0, 0, 1) 80%,
+        rgba(0, 0, 0, 1) 100%
+      )`,
+      },
       borderColor: { primary },
       transitionTimingFunction: {
         'button-click': 'cubic-bezier(0.4, 0, 0.2, 1)',
