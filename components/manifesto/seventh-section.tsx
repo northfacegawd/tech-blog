@@ -4,11 +4,13 @@ import React, { useCallback, useEffect, useRef } from 'react';
 export default function SeventhSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const pRef = useRef<HTMLParagraphElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
 
   const onShowParagraph = useCallback(() => {
     const section = sectionRef.current;
     const p = pRef.current;
-    if (!section || !p) return;
+    const image = imageRef.current;
+    if (!section || !p || !image) return;
     if (isVisible(section.getBoundingClientRect())) {
       p.style.display = 'block';
     } else {
@@ -20,9 +22,9 @@ export default function SeventhSection() {
     p.style.opacity = `${calcRange([0, 1], {
       currentYOffset,
       scrollHeight: section.scrollHeight,
-      delay: { start: 0.8, end: 1 },
+      delay: { start: 0.6, end: 0.85 },
     })}`;
-  }, []);
+  }, [sectionRef.current, pRef.current, imageRef.current]);
 
   useEffect(() => {
     window.addEventListener('scroll', onShowParagraph, { passive: true });
@@ -35,10 +37,15 @@ export default function SeventhSection() {
     <section className="w-full relative" ref={sectionRef}>
       <div className="bg-gradient-to-t from-black dark:to-gray-900 to-white h-[120vh] w-full" />
       <div className="w-full">
-        <img src="/images/earth.avif" alt="earth" />
+        <img
+          src="/images/earth.avif"
+          alt="earth"
+          className="scale-125"
+          ref={imageRef}
+        />
       </div>
       <p
-        className="fixed top-[50vh] left-[10vw] w-full z-20 text-2xl md:text-5xl hidden opacity-0 max-w-[80vw]"
+        className="fixed top-[55vh] md:top-[50vh] left-[10vw] w-full z-20 text-2xl md:text-5xl hidden opacity-0 max-w-[80vw]"
         ref={pRef}
       >
         포스트를 넘어 콘텐츠로,
