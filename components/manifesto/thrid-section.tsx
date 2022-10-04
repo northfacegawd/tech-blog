@@ -8,7 +8,7 @@ import React, {
 } from 'react';
 import { Transition, TransitionStatus } from 'react-transition-group';
 
-const duration = 1000;
+const duration = 500;
 
 const defaultStyle: CSSProperties = {
   transition: `${duration}ms ease-out`,

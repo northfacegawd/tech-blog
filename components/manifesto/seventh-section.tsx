@@ -52,7 +52,7 @@ export default function SeventhSection() {
         <img
           src="/images/earth.avif"
           alt="earth"
-          className="object-cover"
+          className="object-cover w-full"
           ref={imageRef}
         />
       </div>
