@@ -2,11 +2,11 @@
   .section {
     @apply w-full;
     &.active {
-      @apply bg-slate-200 dark:bg-gray-800;
+      @apply bg-slate-100 dark:bg-gray-800;
     }
   }
   .blockquote {
-    @apply bg-gray-500 p-12 rounded-lg border-l-8 border-gray-400;
+    @apply bg-gray-600 p-12 rounded-lg border-l-8 border-gray-400;
   }
   .card {
     @apply shadow-xl p-10 bg-gray-300 bg-opacity-70 rounded-md transition-all hover:bg-opacity-100 hover:shadow-lg duration-300 ease-out dark:shadow-gray-700;

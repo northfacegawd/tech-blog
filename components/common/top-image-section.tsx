@@ -12,7 +12,7 @@ const duration = 500;
 const defaultStyle: CSSProperties = {
   opacity: 0,
   transition: `all ${duration}ms ease-out`,
-  backgroundSize: '95%',
+  backgroundSize: '98%',
 };
 
 const transitionStyle: Partial<Record<TransitionStatus, CSSProperties>> = {
@@ -42,7 +42,6 @@ export default function TopImageSection({
             backgroundImage: `url(${imageUrl})`,
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            // backgroundSize: 'cover',
             ...defaultStyle,
             ...transitionStyle[state],
           }}
