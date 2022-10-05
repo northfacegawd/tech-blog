@@ -20,15 +20,24 @@ export default function Header() {
   const [dark, setDark] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(false);
 
-  const onToggleDark = () => setDark((prev) => !prev);
+  const onToggleDark = () => {
+    if (dark) {
+      localStorage.setItem('theme', 'light');
+    } else {
+      localStorage.setItem('theme', 'dark');
+    }
+    setDark((prev) => !prev);
+  };
   const onToggleOpen = () => setOpen((prev) => !prev);
 
   useEffect(() => {
     const { theme } = document.querySelector('html')!.dataset;
     if (theme === 'dark') {
+      localStorage.setItem('theme', 'dark');
       setDark(true);
     }
     if (theme === 'light') {
+      localStorage.setItem('theme', 'light');
       setDark(false);
     }
   }, []);
