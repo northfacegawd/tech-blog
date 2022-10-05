@@ -37,6 +37,13 @@ class MyDocument extends Document {
             dangerouslySetInnerHTML={{
               __html: `
             (function () {
+              const theme = localStorage.getItem('theme');
+
+              if(theme && ['dark','light'].includes(theme)) {
+                document.querySelector('html').dataset.theme = theme;
+                return;
+              } 
+
               if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
                 document.querySelector('html').dataset.theme = 'dark';
               } else {
