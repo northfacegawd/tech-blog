@@ -47,7 +47,7 @@ export default function TopImageSection({
     <Transition in={render} timeout={duration}>
       {(state) => (
         <div
-          className="h-[40vh] md:h-[55vh] overflow-hidden relative"
+          className="h-[50vh] md:h-[60vh] overflow-hidden relative flex flex-col justify-end pb-8"
           style={{ ...defaultStyle, ...transitionStyle[state] }}
         >
           <Image
@@ -57,11 +57,10 @@ export default function TopImageSection({
             className="absolute -z-10"
             placeholder="blur"
           />
-          <p className="w-full max-w-3xl mx-auto z-10 pt-[35vh] md:pt-[40vh] px-4 text-2xl md:text-4xl text-shadow-xl shadow-black text-white">
+          <p className="w-full max-w-3xl mx-auto z-10 px-4 text-2xl md:text-4xl text-shadow-xl shadow-black text-white">
             {title}
-          </p>
-          <p className='"w-full max-w-3xl mx-auto mt-4 z-10 px-4 text-base md:text-2xl text-shadow-xl shadow-black text-white'>
-            {description}
+            <br />
+            <span className="text-lg md:text-2xl">{description}</span>
           </p>
         </div>
       )}
