@@ -13,7 +13,7 @@ const Manifesto: NextPage = function () {
   return (
     <>
       <TopImageSection
-        imageUrl="/images/manifesto.webp"
+        category="manifesto"
         title="Manifesto"
         description="제 블로그에 담고자 하는 글쓰기 원칙을 소개합니다."
       />
