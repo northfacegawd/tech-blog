@@ -17,4 +17,16 @@
   .divide {
     @apply w-8 mx-auto my-6 h-[2px] bg-slate-400;
   }
+  .article-category {
+    @apply text-slate-600;
+  }
+  .article-title {
+    @apply text-xl font-medium md:text-2xl;
+  }
+  .article-sub-title {
+    @apply text-lg font-light text-gray-600 leading-7 md:text-xl;
+  }
+  .article-date {
+    @apply text-sm font-extralight text-base;
+  }
 }

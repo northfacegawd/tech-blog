@@ -3,9 +3,10 @@ import React, { CSSProperties, useEffect, useMemo, useState } from 'react';
 import { Transition, TransitionStatus } from 'react-transition-group';
 import manifesto from '@public/images/manifesto.webp';
 import resume from '@public/images/resume.webp';
+import home from '@public/images/home.jpeg';
 
 interface TopImageSectionProps {
-  category: 'resume' | 'manifesto';
+  category: 'resume' | 'manifesto' | 'home';
   title: string;
   description: string;
 }
@@ -35,6 +36,7 @@ export default function TopImageSection({
     const images = {
       resume,
       manifesto,
+      home,
     };
     return images[category] ?? manifesto;
   }, [category]);
@@ -54,8 +56,9 @@ export default function TopImageSection({
             src={imageSrc}
             layout="fill"
             objectFit="cover"
-            className="absolute -z-10"
+            className="absolute -z-10 position"
             placeholder="blur"
+            alt={category}
           />
           <p className="w-full max-w-3xl mx-auto z-10 px-4 text-2xl md:text-4xl text-shadow-xl shadow-black text-white">
             {title}
