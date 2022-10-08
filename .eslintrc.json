@@ -42,6 +42,14 @@
     "func-names": "off",
     "jsx-a11y/anchor-is-valid": "off"
   },
+  "overrides": [
+    {
+      "files": ["components/icons/*.tsx"],
+      "rules": {
+        "react/require-default-props": "off"
+      }
+    }
+  ],
   "settings": {
     "import/resolver": {
       "node": {

@@ -76,7 +76,7 @@ exports[`<Home /> renders a heading 1`] = `
       class="border-b-[3px] my-8 mx-auto max-w-xl rounded-full"
     />
     <section
-      class="max-w-3xl mx-auto"
+      class="max-w-2xl mx-auto"
     >
       <span
         class="text-lg text-slate-600 dark:text-zinc-400"
@@ -92,9 +92,11 @@ exports[`<Home /> renders a heading 1`] = `
         <li
           class="first-of-type:mt-0 first-of-type:border-0 mt-8 border-t-2 pt-4"
         >
-          <a>
+          <a
+            class="cursor-pointer"
+          >
             <article
-              class="flex flex-col space-y-1 md:space-y-3"
+              class="article"
             >
               <span
                 class="article-category"
@@ -122,9 +124,11 @@ exports[`<Home /> renders a heading 1`] = `
         <li
           class="first-of-type:mt-0 first-of-type:border-0 mt-8 border-t-2 pt-4"
         >
-          <a>
+          <a
+            class="cursor-pointer"
+          >
             <article
-              class="flex flex-col space-y-1 md:space-y-3"
+              class="article"
             >
               <span
                 class="article-category"
@@ -152,9 +156,11 @@ exports[`<Home /> renders a heading 1`] = `
         <li
           class="first-of-type:mt-0 first-of-type:border-0 mt-8 border-t-2 pt-4"
         >
-          <a>
+          <a
+            class="cursor-pointer"
+          >
             <article
-              class="flex flex-col space-y-1 md:space-y-3"
+              class="article"
             >
               <span
                 class="article-category"

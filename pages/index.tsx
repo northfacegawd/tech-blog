@@ -2,6 +2,7 @@ import React from 'react';
 import type { NextPage } from 'next';
 import TopImageSection from '@components/common/top-image-section';
 import Profile from '@components/common/profile';
+import Chevron from '@components/icons/chevron';
 
 const Home: NextPage = function () {
   return (
@@ -44,6 +45,12 @@ const Home: NextPage = function () {
               </li>
             ))}
           </ul>
+          <button
+            className="bg-primary flex p-3 rounded-lg mt-8 mx-auto min-w-[30%] justify-center items-center hover:brightness-105 transition-all duration-300"
+            type="button"
+          >
+            <Chevron arrowPosition="down" className="mr-2" />더 살펴보기
+          </button>
         </section>
       </div>
     </>
