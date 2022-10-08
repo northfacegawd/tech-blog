@@ -14,7 +14,7 @@ const Home: NextPage = function () {
       <div className="py-8 px-4 section">
         <Profile />
         <div className="border-b-[3px] my-8 mx-auto max-w-xl rounded-full" />
-        <section className="max-w-3xl mx-auto">
+        <section className="max-w-2xl mx-auto">
           <span className="text-lg text-slate-600 dark:text-zinc-400">
             새로운 소식
           </span>
@@ -27,8 +27,8 @@ const Home: NextPage = function () {
                 className="first-of-type:mt-0 first-of-type:border-0 mt-8 border-t-2 pt-4"
                 key={i}
               >
-                <a>
-                  <article className="flex flex-col space-y-1 md:space-y-3">
+                <a className="cursor-pointer">
+                  <article className="article">
                     <span className="article-category">개발</span>
                     <h5 className="article-title">
                       🕘&nbsp;왜 내가 작성한 JavaScript Date 코드가 서버에서는

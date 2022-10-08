@@ -32,7 +32,7 @@ exports[`<Home /> renders a heading 1`] = `
     </p>
   </div>
   <div
-    class="py-8 section"
+    class="py-8 px-4 section"
   >
     <div
       class="mx-auto flex max-w-xl flex-col sm:flex-row items-center space-y-4 sm:space-y-0"
@@ -58,7 +58,7 @@ exports[`<Home /> renders a heading 1`] = `
         </span>
       </div>
       <div
-        class="ml-5 flex flex-col space-y-2 justify-center"
+        class="md:ml-5 flex flex-col space-y-2 justify-center"
       >
         <p
           class="text-2xl font-medium"
@@ -84,10 +84,102 @@ exports[`<Home /> renders a heading 1`] = `
         새로운 소식
       </span>
       <h1
-        class="text-4xl mt-2"
+        class="text-4xl mt-2 text-gray-700 dark:text-gray-300 mb-8"
       >
         최신 포스트를 살펴보세요
       </h1>
+      <ul>
+        <li
+          class="first-of-type:mt-0 first-of-type:border-0 mt-8 border-t-2 pt-4"
+        >
+          <a>
+            <article
+              class="flex flex-col space-y-1 md:space-y-3"
+            >
+              <span
+                class="article-category"
+              >
+                개발
+              </span>
+              <h5
+                class="article-title"
+              >
+                🕘 왜 내가 작성한 JavaScript Date 코드가 서버에서는 다르게 보이는 거죠?
+              </h5>
+              <p
+                class="article-sub-title"
+              >
+                JavaScript에서 흔히 혼동되는 Date 객체에 대한 개념을 정리해봅니다.
+              </p>
+              <p
+                class="article-date"
+              >
+                2022-09-08
+              </p>
+            </article>
+          </a>
+        </li>
+        <li
+          class="first-of-type:mt-0 first-of-type:border-0 mt-8 border-t-2 pt-4"
+        >
+          <a>
+            <article
+              class="flex flex-col space-y-1 md:space-y-3"
+            >
+              <span
+                class="article-category"
+              >
+                개발
+              </span>
+              <h5
+                class="article-title"
+              >
+                🕘 왜 내가 작성한 JavaScript Date 코드가 서버에서는 다르게 보이는 거죠?
+              </h5>
+              <p
+                class="article-sub-title"
+              >
+                JavaScript에서 흔히 혼동되는 Date 객체에 대한 개념을 정리해봅니다.
+              </p>
+              <p
+                class="article-date"
+              >
+                2022-09-08
+              </p>
+            </article>
+          </a>
+        </li>
+        <li
+          class="first-of-type:mt-0 first-of-type:border-0 mt-8 border-t-2 pt-4"
+        >
+          <a>
+            <article
+              class="flex flex-col space-y-1 md:space-y-3"
+            >
+              <span
+                class="article-category"
+              >
+                개발
+              </span>
+              <h5
+                class="article-title"
+              >
+                🕘 왜 내가 작성한 JavaScript Date 코드가 서버에서는 다르게 보이는 거죠?
+              </h5>
+              <p
+                class="article-sub-title"
+              >
+                JavaScript에서 흔히 혼동되는 Date 객체에 대한 개념을 정리해봅니다.
+              </p>
+              <p
+                class="article-date"
+              >
+                2022-09-08
+              </p>
+            </article>
+          </a>
+        </li>
+      </ul>
     </section>
   </div>
 </div>

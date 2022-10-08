@@ -27,6 +27,9 @@
     @apply text-lg font-light text-gray-600 leading-7 md:text-xl;
   }
   .article-date {
-    @apply text-sm font-extralight text-base;
+    @apply text-sm font-extralight md:text-base;
+  }
+  .article {
+    @apply flex flex-col space-y-1 md:space-y-3 transition-all duration-300 ease-out hover:transform-gpu hover:translate-x-4 md:hover:translate-x-6 before:w-1 before:bg-primary before:h-full before:block before:absolute before:top-0 before:-left-4 before:opacity-0 hover:before:opacity-100 before:transition-all before:duration-300 before:ease-out before:rounded-xl;
   }
 }
