@@ -2,8 +2,211 @@
 
 exports[`<Home /> renders a heading 1`] = `
 <div>
-  <div>
-    Home
+  <div
+    class="h-[50vh] md:h-[60vh] overflow-hidden relative flex flex-col justify-end pb-8"
+    style="opacity: 1; transition: all 500ms ease-out;"
+  >
+    <span
+      style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+    >
+      <img
+        alt="home"
+        class="absolute -z-10 position"
+        data-nimg="fill"
+        decoding="async"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; background-size: cover; background-position: 0% 0%; filter: blur(20px); background-image: url(data:image/png;base64,imagedata);"
+      />
+      <noscript />
+    </span>
+    <p
+      class="w-full max-w-3xl mx-auto z-10 px-4 text-2xl md:text-4xl text-shadow-xl shadow-black text-white"
+    >
+      이용준의 개발 블로그
+      <br />
+      <span
+        class="text-lg md:text-2xl"
+      >
+        잘부탁드립니다:)
+      </span>
+    </p>
+  </div>
+  <div
+    class="py-8 px-4 section"
+  >
+    <div
+      class="mx-auto flex max-w-xl flex-col sm:flex-row items-center space-y-4 sm:space-y-0"
+    >
+      <div
+        class="rounded-full 4 w-24 h-24 overflow-hidden shadow-2xl border-4 border-gray-400 flex-shrink-0"
+      >
+        <span
+          style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+        >
+          <span
+            style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+          />
+          <img
+            alt="profile"
+            class="object-cover"
+            data-nimg="responsive"
+            decoding="async"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; background-size: cover; background-position: 0% 0%; filter: blur(20px); background-image: url(data:image/png;base64,imagedata);"
+          />
+          <noscript />
+        </span>
+      </div>
+      <div
+        class="md:ml-5 flex flex-col space-y-2 justify-center"
+      >
+        <p
+          class="text-2xl font-medium"
+        >
+          🧑‍💻 이용준
+        </p>
+        <p
+          class="text-base text-gray-700 dark:text-gray-200"
+        >
+          (주)디앤에스에버 프론트엔드 개발자로 근무하고 있습니다.
+        </p>
+      </div>
+    </div>
+    <div
+      class="border-b-[3px] my-8 mx-auto max-w-xl rounded-full"
+    />
+    <section
+      class="max-w-2xl mx-auto"
+    >
+      <span
+        class="text-lg text-slate-600 dark:text-zinc-400"
+      >
+        새로운 소식
+      </span>
+      <h1
+        class="text-4xl mt-2 text-gray-700 dark:text-gray-300 mb-8"
+      >
+        최신 포스트를 살펴보세요
+      </h1>
+      <ul>
+        <li
+          class="first-of-type:mt-0 first-of-type:border-0 mt-8 border-t-2 pt-4"
+        >
+          <a
+            class="cursor-pointer"
+          >
+            <article
+              class="article"
+            >
+              <span
+                class="article-category"
+              >
+                개발
+              </span>
+              <h5
+                class="article-title"
+              >
+                🕘 왜 내가 작성한 JavaScript Date 코드가 서버에서는 다르게 보이는 거죠?
+              </h5>
+              <p
+                class="article-sub-title"
+              >
+                JavaScript에서 흔히 혼동되는 Date 객체에 대한 개념을 정리해봅니다.
+              </p>
+              <p
+                class="article-date"
+              >
+                2022-09-08
+              </p>
+            </article>
+          </a>
+        </li>
+        <li
+          class="first-of-type:mt-0 first-of-type:border-0 mt-8 border-t-2 pt-4"
+        >
+          <a
+            class="cursor-pointer"
+          >
+            <article
+              class="article"
+            >
+              <span
+                class="article-category"
+              >
+                개발
+              </span>
+              <h5
+                class="article-title"
+              >
+                🕘 왜 내가 작성한 JavaScript Date 코드가 서버에서는 다르게 보이는 거죠?
+              </h5>
+              <p
+                class="article-sub-title"
+              >
+                JavaScript에서 흔히 혼동되는 Date 객체에 대한 개념을 정리해봅니다.
+              </p>
+              <p
+                class="article-date"
+              >
+                2022-09-08
+              </p>
+            </article>
+          </a>
+        </li>
+        <li
+          class="first-of-type:mt-0 first-of-type:border-0 mt-8 border-t-2 pt-4"
+        >
+          <a
+            class="cursor-pointer"
+          >
+            <article
+              class="article"
+            >
+              <span
+                class="article-category"
+              >
+                개발
+              </span>
+              <h5
+                class="article-title"
+              >
+                🕘 왜 내가 작성한 JavaScript Date 코드가 서버에서는 다르게 보이는 거죠?
+              </h5>
+              <p
+                class="article-sub-title"
+              >
+                JavaScript에서 흔히 혼동되는 Date 객체에 대한 개념을 정리해봅니다.
+              </p>
+              <p
+                class="article-date"
+              >
+                2022-09-08
+              </p>
+            </article>
+          </a>
+        </li>
+      </ul>
+      <button
+        class="bg-primary flex p-3 rounded-lg mt-8 mx-auto min-w-[30%] justify-center items-center hover:brightness-105 transition-all duration-300"
+        type="button"
+      >
+        <svg
+          class="w-6 h-6 mr-2"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        더 살펴보기
+      </button>
+    </section>
   </div>
 </div>
 `;

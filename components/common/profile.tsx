@@ -18,7 +18,7 @@ export default function Profile() {
           placeholder="blur"
         />
       </div>
-      <div className="ml-5 flex flex-col space-y-2 justify-center">
+      <div className="md:ml-5 flex flex-col space-y-2 justify-center">
         <p className="text-2xl font-medium">🧑‍💻 이용준</p>
         <p className="text-base text-gray-700 dark:text-gray-200">
           (주)디앤에스에버 프론트엔드 개발자로 근무하고 있습니다.
