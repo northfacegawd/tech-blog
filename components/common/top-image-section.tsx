@@ -4,9 +4,10 @@ import { Transition, TransitionStatus } from 'react-transition-group';
 import manifesto from '@public/images/manifesto.webp';
 import resume from '@public/images/resume.webp';
 import home from '@public/images/home.jpeg';
+import posts from '@public/images/posts.webp';
 
 interface TopImageSectionProps {
-  category: 'resume' | 'manifesto' | 'home';
+  category: 'resume' | 'manifesto' | 'home' | 'posts';
   title: string;
   description: string;
 }
@@ -37,6 +38,7 @@ export default function TopImageSection({
       resume,
       manifesto,
       home,
+      posts,
     };
     return images[category] ?? manifesto;
   }, [category]);

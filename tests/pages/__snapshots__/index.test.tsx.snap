@@ -186,8 +186,9 @@ exports[`<Home /> renders a heading 1`] = `
           </a>
         </li>
       </ul>
-      <button
-        class="bg-primary flex p-3 rounded-lg mt-8 mx-auto min-w-[30%] justify-center items-center hover:brightness-105 transition-all duration-300"
+      <a
+        class="bg-primary flex p-3 rounded-lg mt-8 mx-auto min-w-[30%] max-w-[50%] justify-center items-center hover:brightness-105 transition-all duration-300"
+        href="/posts"
         type="button"
       >
         <svg
@@ -205,7 +206,7 @@ exports[`<Home /> renders a heading 1`] = `
           />
         </svg>
         더 살펴보기
-      </button>
+      </a>
     </section>
   </div>
 </div>
