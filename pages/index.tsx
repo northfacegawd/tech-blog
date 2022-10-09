@@ -4,6 +4,7 @@ import TopImageSection from '@components/common/top-image-section';
 import Profile from '@components/common/profile';
 import Chevron from '@components/icons/chevron';
 import PostList from '@components/common/post-list';
+import Link from 'next/link';
 
 const Home: NextPage = function () {
   return (
@@ -24,12 +25,14 @@ const Home: NextPage = function () {
             최신 포스트를 살펴보세요
           </h1>
           <PostList />
-          <button
-            className="bg-primary flex p-3 rounded-lg mt-8 mx-auto min-w-[30%] justify-center items-center hover:brightness-105 transition-all duration-300"
-            type="button"
-          >
-            <Chevron arrowPosition="down" className="mr-2" />더 살펴보기
-          </button>
+          <Link href="/posts">
+            <a
+              className="bg-primary flex p-3 rounded-lg mt-8 mx-auto min-w-[30%] max-w-[50%] justify-center items-center hover:brightness-105 transition-all duration-300"
+              type="button"
+            >
+              <Chevron arrowPosition="down" className="mr-2" />더 살펴보기
+            </a>
+          </Link>
         </section>
       </div>
     </>
