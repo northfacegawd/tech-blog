@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="w-full py-10 px-4 bg-gray-200 flex flex-col justify-center items-center space-y-5 font-light text-gray-700 dark:bg-black/50 dark:text-gray-300">
+    <footer className="footer-container">
       <p className="text-center">Copyright © 2022, All right reserved.</p>
       <p className="text-center">
         Built with{' '}
@@ -14,6 +14,18 @@ export default function Footer() {
         >
           NextJS
         </a>
+      </p>
+      <p>
+        이 블로그는{' '}
+        <a
+          href="https://wormwlrm.github.io/"
+          target="_blank"
+          rel="noreferrer"
+          className="cursor-pointer underline-offset-4 decoration-dashed underline"
+        >
+          지그재그님의 블로그
+        </a>
+        를 참고하여 제작되었습니다.
       </p>
     </footer>
   );
