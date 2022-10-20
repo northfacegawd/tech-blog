@@ -1,4 +1,5 @@
 import React, { PropsWithChildren } from 'react';
+import Footer from './footer';
 import Header from './header';
 
 const Layout: React.FC<PropsWithChildren> = function ({ children }) {
@@ -6,7 +7,7 @@ const Layout: React.FC<PropsWithChildren> = function ({ children }) {
     <>
       <Header />
       <main className="w-full">{children}</main>
-      <footer />
+      <Footer />
     </>
   );
 };
