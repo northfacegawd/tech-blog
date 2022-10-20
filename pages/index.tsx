@@ -27,10 +27,10 @@ const Home: NextPage = function () {
           <PostList />
           <Link href="/posts">
             <a
-              className="bg-primary flex p-3 rounded-lg mt-8 mx-auto min-w-[30%] max-w-[50%] justify-center items-center hover:brightness-105 transition-all duration-300"
+              className="text-sm min-w-[180px] text-white bg-primary flex p-3 rounded-lg mt-8 mx-auto  max-w-[40%] justify-center items-center hover:brightness-105 transition-all duration-300"
               type="button"
             >
-              <Chevron arrowPosition="down" className="mr-2" />더 살펴보기
+              <Chevron arrowPosition="down" className="w-5 mr-2" />더 살펴보기
             </a>
           </Link>
         </section>
