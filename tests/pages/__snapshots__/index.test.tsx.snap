@@ -187,12 +187,12 @@ exports[`<Home /> renders a heading 1`] = `
         </li>
       </ul>
       <a
-        class="bg-primary flex p-3 rounded-lg mt-8 mx-auto min-w-[30%] max-w-[50%] justify-center items-center hover:brightness-105 transition-all duration-300"
+        class="text-sm min-w-[180px] text-white bg-primary flex p-3 rounded-lg mt-8 mx-auto max-w-[40%] justify-center items-center hover:brightness-105 transition-all duration-300"
         href="/posts"
         type="button"
       >
         <svg
-          class="w-6 h-6 mr-2"
+          class="w-6 h-6 w-5 mr-2"
           fill="none"
           stroke="currentColor"
           stroke-width="1.5"
