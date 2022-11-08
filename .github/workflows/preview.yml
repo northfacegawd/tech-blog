@@ -2,13 +2,13 @@ name: Capture Vercel preview URL
 
 on:
   issue_comment:
-    types: [edited]
+    types: [created]
 
 jobs:
   capture_vercel_preview_url:
     name: Capture Vercel preview URL
     runs-on: "ubuntu-latest"
-    if: ${{ startsWith(github.event.comment.body, '/deploy preview') }}
+    if: ${{ startsWith(github.event.comment.body, 'preview') }}
     steps:
       - uses: aaimio/vercel-preview-url-action@v1
         id: vercel_preview_url
